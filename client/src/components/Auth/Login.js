@@ -45,6 +45,7 @@ const { dispatch } = useContext(Context)
         onSuccess={onSuccess}
         onFailure={onFailure}
         isSignedIn={true}
+        buttonText="Login with Google"
         theme='dark'
       />
     </div>
