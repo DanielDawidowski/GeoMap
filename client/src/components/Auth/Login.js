@@ -18,9 +18,9 @@ const { dispatch } = useContext(Context)
     const client = new GraphQLClient('http://localhost:4000/graphql', {
       headers: { authorization: idToken}
     })
-   const { me } = await client.request(ME_QUERY)
-   console.log({ me })
-   dispatch({ type: "LOGIN_USER", payload: me })
+    const { me } = await client.request(ME_QUERY)
+    dispatch({ type: "LOGIN_USER", payload: me })
+    dispatch({ type: "IS_LOGGED_IN", payload: googleUser.isSignedIn()})
     } catch (err) {
       onFailure(err)
     }
