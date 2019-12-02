@@ -18,13 +18,17 @@ module.exports = {
         }
     },
     Mutation: {
-        createPin: authenticated (async (root, args, ctx) => {
+        createPin: authenticated(async (root, args, ctx) => {
             const newPin = await new Pin({
                 ...args.input,
                 author: ctx.currentUser._id
             }).save()
           const pinAdded = await Pin.populate(newPin, 'author')
           return pinAdded
+        }),
+        deletePin: authenticated(async (root, args, ctx) => {
+          const pinDeleted = await Pin.findOneAndDelete({ _id: args.pinId}).exec()
+          return pinDeleted
         })
     }
 }
