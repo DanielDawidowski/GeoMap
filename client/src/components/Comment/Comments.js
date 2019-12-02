@@ -6,6 +6,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
+import distanceToNow from 'date-fns/formatDistanceToNow';
+import { pl } from 'date-fns/locale';
 
 const Comments = ({ comments, classes }) => (
   <List className={classes.root}>
@@ -17,9 +19,12 @@ const Comments = ({ comments, classes }) => (
         <ListItemText 
           primary={comment.text}
           secondary={
+              <>
               <Typography className={classes.inline} component="span" color="textPrimary">
                 {comment.author.name}
               </Typography>
+              . {distanceToNow(Number(comment.createdAt),{ locale: pl })} temu
+              </>
           }
         />
       </ListItem>
