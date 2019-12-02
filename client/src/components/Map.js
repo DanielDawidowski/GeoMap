@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import ReactMapGL, { NavigationControl, Marker, Popup } from 'react-map-gl' 
-import differenceInMinutes from 'date-fns/difference_in_minutes'
+import differenceInMinutes from 'date-fns/differenceInMinutes'
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
