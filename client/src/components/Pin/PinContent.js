@@ -3,8 +3,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import FaceIcon from "@material-ui/icons/Face";
-import format from 'date-fns/format'
-import { pl } from 'date-fns/locale'
+import format from 'date-fns/format';
+import { pl } from 'date-fns/locale';
+import CreateComment from '../Comment/CreateComment';
+import Comments from '../Comment/Comments'
 import Context from '../../context'
 
 const PinContent = ({ classes }) => {
@@ -36,7 +38,7 @@ const PinContent = ({ classes }) => {
         gutterBottom 
       >
         <AccessTimeIcon className={classes.icon} />
-        {format(Number(createdAt), "MMMM do, yyyy", { locale: pl })}
+        {format(Number(createdAt), "do MMMM, yyyy", { locale: pl })}
       </Typography>
       <Typography 
         variant="subtitle1"
@@ -45,6 +47,9 @@ const PinContent = ({ classes }) => {
         <AccessTimeIcon className={classes.icon} />
         {content}
       </Typography>
+      {/* Pin Comments  */}
+      <CreateComment />
+      <Comments comments={comments}/>
     </div>
   )
 };
