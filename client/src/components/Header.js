@@ -10,7 +10,7 @@ import Context from '../context';
 import Signout from '../components/Auth/Signout';
 
 const Header = ({ classes }) => {
-  const mobileSize = useMediaQuery('(max-width: 480px)')
+  const mobileSize = useMediaQuery('(max-width: 500px)')
   const { state } = useContext(Context)
   const { currentUser } = state
   return (

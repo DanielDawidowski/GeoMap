@@ -10,7 +10,7 @@ import PinContent from './Pin/PinContent'
 
 
 const Blog = ({ classes }) => {
-  const mobileSize = useMediaQuery('(max-width: 480px)')
+  const mobileSize = useMediaQuery('(max-width: 500px)')
   const { state } = useContext(Context)
   const { draft, currentPin } = state
 
