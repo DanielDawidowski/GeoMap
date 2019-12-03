@@ -10,7 +10,7 @@ import PinContent from './Pin/PinContent'
 
 
 const Blog = ({ classes }) => {
-  const mobileSize = useMediaQuery('(max-width: 650px)')
+  const mobileSize = useMediaQuery('(max-width: 480px)')
   const { state } = useContext(Context)
   const { draft, currentPin } = state
 
@@ -39,6 +39,7 @@ const styles = {
     justifyContent: "center"
   },
   rootMobile: {
+    minWidth: 0,
     maxWidth: "100%",
     maxHeight: 300,
     overflowX: "hidden",

@@ -25,8 +25,8 @@ const INITIAL_VIEWPORT = {
 
 const Map = ({ classes }) => {
   const client = useClient();
-  const mobileSize = useMediaQuery('(max-width: 650px)')
-  const { state, dispatch } = useContext(Context)
+  const mobileSize = useMediaQuery('(max-width: 480px)');
+  const { state, dispatch } = useContext(Context);
   useEffect(() => {
     getPins()
   }, [])
