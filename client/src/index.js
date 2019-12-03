@@ -17,7 +17,7 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const wsLink = new WebSocketLink({
-  uri: "wss://event-follow.netlify.com/graphql",
+  uri: process.env.NODE_ENV === 'production' ? "wss://event-follow.herokuapp.com/graphql" : 'ws://localhost:4000/graphql',
   options: {
     reconnect: true
   }
