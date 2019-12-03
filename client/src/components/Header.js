@@ -27,7 +27,7 @@ const Header = ({ classes }) => {
               color='inherit'
               noWrap
             >
-              GeoMap
+              Event Follow
             </Typography>
           </div>
 
